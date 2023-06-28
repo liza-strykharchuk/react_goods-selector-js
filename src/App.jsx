@@ -22,10 +22,6 @@ export const App = () => {
     setSelectedGood('');
   };
 
-  const handleSelect = (good) => {
-    selectGood(good);
-  };
-
   const selectGood = (good) => {
     setSelectedGood(good);
   };
@@ -75,7 +71,11 @@ export const App = () => {
                         ? 'is-info'
                         : ''}`
                     }
-                    onClick={event => handleSelect(good)}
+                    onClick={
+                      selected
+                        ? clearComponent
+                        : () => selectGood(good)
+                    }
                   >
                     {`${selected
                       ? '-'
