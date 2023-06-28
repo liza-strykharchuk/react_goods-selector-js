@@ -22,7 +22,7 @@ export const App = () => {
     setSelectedGood('');
   };
 
-  const addButton = (good) => {
+  const selectGood = (good) => {
     setSelectedGood(good);
   };
 
@@ -74,7 +74,7 @@ export const App = () => {
                     onClick={
                       selected
                         ? clearComponent
-                        : () => addButton(good)
+                        : () => selectGood(good)
                     }
                   >
                     {`${selected
