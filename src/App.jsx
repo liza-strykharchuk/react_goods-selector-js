@@ -94,4 +94,4 @@ export const App = () => {
       </table>
     </main>
   );
-};
+}; //
