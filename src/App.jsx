@@ -22,10 +22,6 @@ export const App = () => {
     setSelectedGood('');
   };
 
-  const selectGood = (good) => {
-    setSelectedGood(good);
-  };
-
   return (
     <main className="section container">
       <h1 className="title is-flex is-align-items-center">
@@ -72,10 +68,10 @@ export const App = () => {
                         : ''}`
                     }
                     onClick={
-                      selected
-                        ? clearComponent
-                        : () => selectGood(good)
-                    }
+                        selected
+                          ? () => setSelectedGood('')
+                          : () => setSelectedGood(good)
+                      }
                   >
                     {`${selected
                       ? '-'
@@ -94,4 +90,4 @@ export const App = () => {
       </table>
     </main>
   );
-}; //
+};
